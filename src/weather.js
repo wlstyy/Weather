@@ -93,7 +93,8 @@ http.createServer(function (req, res) {
 	});
   }
   //log information
-  console.log(log);
+  if(typeof log != 'undefined'&&String(log).length>0)
+    console.log(log);
 }
 }).listen(12345, '127.0.0.1');
 console.log('Server running at http://127.0.0.1:12345/');
