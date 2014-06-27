@@ -22,16 +22,11 @@ http.createServer(function (req, res) {
   for(var i=0;i<links.length;i++){
     //get weather information
     http.get(links[i], function(response) {
-      var data='';
+      
       response.on("data", function(chunk) {
-        data+=chunk;
-      });
-
-      response.on('end', function(){
-
         count++;
         //parse weather information
-        var obj = JSON.parse(data);
+        var obj = JSON.parse(chunk);
         if(typeof obj['current_observation'] !='undefined'){
 
         var city=obj['current_observation']['display_location']['full'];
