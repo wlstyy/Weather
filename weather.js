@@ -90,7 +90,10 @@ http.createServer(function (req, res) {
         }
       }else{
         if(count==4){
-          console.log("Wrong Key");
+          //console.log("Wrong Key");
+          res.writeHead(200, {'Content-Type': 'text/plain'});
+          res.write('Wrong key!! Please Try Again!');
+          res.end();
         }
       }
       });
