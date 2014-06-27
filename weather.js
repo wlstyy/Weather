@@ -91,8 +91,11 @@ http.createServer(function (req, res) {
       }else{
         if(count==4){
           //console.log("Wrong Key");
-          res.writeHead(200, {'Content-Type': 'text/plain'});
-          res.write('Wrong key!! Please Try Again!');
+          res.writeHead(600, {'Content-Type': 'text/plain'});
+          res.write('Wrong key!! Please Try Again!\n');
+          res.write('The link should be like:\n');
+          res.write('http://localhost:12345/weather59ddbeed4778dd00?name=foo\n'); 
+          res.write('where \'59ddbeed4778dd00\' is your user API Key and the optional \'?name=foo\' is input parameter. \'?\' is the split symbol.');
           res.end();
         }
       }
